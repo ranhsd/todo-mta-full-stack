@@ -1,0 +1,17 @@
+{ 
+  "format_version": 1, 
+  "imports": 
+  [ { 
+		"target_table": "todo.Task", 
+		"source_data" : { "data_type" : "CSV", "file_name" : "tasks.csv", "has_header" : true }, 
+		"import_settings" : { "import_columns" : [ "id", "title","note" ] }, 
+		"column_mappings" : { "id" : 1, "title" : 2, "note" : 3 	} 
+	},
+	{ 
+		"target_table": "todo.SubTask", 
+		"source_data" : { "data_type" : "CSV", "file_name" : "subtask.csv", "has_header" : true }, 
+		"import_settings" : { "import_columns" : [ "id","taskId","content"] }, 
+		"column_mappings" : { "id" : 1, "taskId" : 2, "content" : 3 	} 
+	}
+  ] 
+}
